@@ -1,5 +1,12 @@
 
+<form #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
 
-<div appExample>
-    merhaba 
-</div>
+    <input name="name" type="text" placeholder="Name" ngModel> <br> 
+    <input name="surname" type="text" placeholder="Surname" ngModel> <br> 
+    <input name="email" type="email" placeholder="Email" ngModel> <br> 
+    <input name="tel" type="tel" placeholder="Tel"> <br> 
+
+
+
+    <button>Send</button>
+</form>
