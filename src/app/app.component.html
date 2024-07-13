@@ -1,4 +1,4 @@
-
+<!-- 
 <form #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
 
     <input name="name" type="text" placeholder="Name" ngModel> <br> 
@@ -9,4 +9,15 @@
 
 
     <button>Send</button>
+</form> -->
+
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Surname">
+    <input type="text" placeholder="Email">
+    <input type="text" placeholder="Tel">
+
+    <button>Send</button>
 </form>
+
+
