@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { subscribeOn } from 'rxjs';
 
 @Component({
@@ -13,10 +13,15 @@ frm: FormGroup;
 
 constructor(private formBuilder: FormBuilder){
 this.frm = formBuilder.group({
-  name:[""],
+  name:["emircan",Validators.required],
   surname:[""],
   email:[""],
-  tel:[""]
+  tel:[""],
+  addressGroup: formBuilder.group({
+    country:[""],
+    city:[""],
+    address:[""]
+  })
 })
 }
 
