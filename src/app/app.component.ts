@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,28 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-angular-project';
 
-  @ViewChild("frm",{static:true}) frm :  NgForm;
+frm: FormGroup;
 
-
-  onSubmit(data) { 
-  console.log(data);
-  console.log(this.frm.value);
-    
+constructor(private formBuilder: FormBuilder){
+this.frm = formBuilder.group({
+  name:["emircan",Validators.required],
+  surname:[""],
+  email:[""],
+  tel:[""],
+  addressGroup: formBuilder.group({
+    country:[""],
+    city:[""],
+    address:[""]
+  })
+})
 }
+
+onSubmit(){
+  console.log(this.frm.value);
+  
+}
+
 
 
 }
