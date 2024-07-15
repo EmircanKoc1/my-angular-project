@@ -11,6 +11,7 @@ export class AppComponent {
 
 frm: FormGroup;
 
+
 constructor(private formBuilder: FormBuilder){
 this.frm = formBuilder.group({
   name:["emircan",Validators.required],

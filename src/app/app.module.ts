@@ -7,8 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ExampleDirective } from './directives/example.directive';
 import { CustomifDirective } from './directives/customif.directive';
 import { CustomPipe } from './pipes/custom.pipe';
-import { AComponent } from './components/a/a.component';
-import { BComponent } from './components/b/b.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,8 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ExampleDirective,
     CustomifDirective,
     CustomPipe,
-    AComponent,
-    BComponent,
+  
   ],
   imports: [
     BrowserModule,
